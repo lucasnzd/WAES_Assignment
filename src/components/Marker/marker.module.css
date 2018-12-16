@@ -1,0 +1,11 @@
+.marker {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    cursor: pointer;
+}
+
+.marker.selected {
+    border-color: #424242;
+}
