@@ -1,0 +1,19 @@
+.button {
+    display: block;
+    background-color: #000 ;
+    color: #fff;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    width: 70px;
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    outline: none;
+    transition: background-color 0.25s ease-in-out;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #242424;
+}
