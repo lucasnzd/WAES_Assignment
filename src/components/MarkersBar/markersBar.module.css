@@ -1,0 +1,49 @@
+.navbar {
+    overflow: hidden;
+    padding: 0;
+    width: 120px;
+    z-index: 999;
+    position: absolute;
+    left: -20px;
+    align-self: center;
+}
+
+.navbar .navButton {
+    transform: rotate(90deg);
+    align-self: center;
+    position: relative;
+    left: 0px;
+    transition: opacity 0.3ms ease-in-out;
+    opacity: 0.5;
+}
+
+.navbar .markersContainer.open .navButton {
+    opacity: 1;
+}
+
+.markersContainer {
+    display: flex;
+    width: 70px;
+    position: relative;
+    background-color: #000;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 150px;
+    left: -70px;
+    transition: all 0.2s ease-in-out;
+}
+
+.markersContainer.open {
+    left: 0px;
+}
+
+.markersContainer .markers {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+    margin-left: 14px;
+    height: 150px;
+    list-style: none;
+}
