@@ -1,0 +1,6 @@
+.editorContainer {
+    display: flex;
+    margin: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
