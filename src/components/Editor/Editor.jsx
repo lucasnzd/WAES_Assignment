@@ -6,7 +6,7 @@ class Editor extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: 'Enter some text to highlight and take notes...'
+            text: '.....'
         };
         this.handleChange = this.handleChange.bind(this);
     } 
@@ -20,7 +20,15 @@ class Editor extends Component {
 
     render() {
         return (
-            <textarea className={styles.editor} onChange={this.handleChange} value={this.state.text} />
+            <div className={styles.highlighterArea}>
+                <label htmlFor="highlighter_area">Enter some text to highlight and take notes</label>
+                <textarea
+                    name="highlighter_area"
+                    className={styles.editor}
+                    onChange={this.handleChange}
+                    value={this.state.text}
+                />
+            </div>
         );
     }
 }
