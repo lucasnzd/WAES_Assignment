@@ -10,3 +10,22 @@
     padding: 5px;
     resize: none;
 }
+
+.editor::-webkit-scrollbar {
+    width: 10px;
+}
+
+.editor::-webkit-scrollbar-track {
+    -webkit-box-shadow: transparent;
+}
+ 
+.editor::-webkit-scrollbar-thumb {
+  background-color: #000;
+  outline: 1px solid #000;
+  border-radius: 10px;
+}
+
+.highlighterArea {
+    width: 100%;
+    text-align: center;
+}
