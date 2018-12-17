@@ -1,15 +1,3 @@
-import React, { Component } from 'react';
-import styles from './marker.module.css';
+import Marker from './Marker';
 
-class MarkersBar extends Component {
-    render() {
-        return (
-            <li
-                className={`${styles.marker} ${styles.selected}`}
-                style={{backgroundColor: this.props.color}}
-            />
-        );
-    }
-}
-
-export default MarkersBar;
+export default Marker;
