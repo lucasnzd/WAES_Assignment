@@ -1,0 +1,23 @@
+.link {
+    text-align: center;
+    width: 40%;
+    background-color: #000;
+    margin: 0 auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.link:hover {
+    opacity: 0.8;
+}
+
+.link a {
+    color:  #fff;
+    text-decoration: none;
+    width: 100%;
+    line-height: 40px;
+}
