@@ -11,6 +11,21 @@
     resize: none;
 }
 
+.firstColor::selection,
+.firstColor::-moz-selection {
+    background: #00E676;
+}
+
+.secondColor::selection,
+.secondColor::-moz-selection {
+    background: #FFFF00;
+}
+
+.thirdColor::selection,
+.thirdColor::-moz-selection {
+    background: #E57373;
+}
+
 .editor::-webkit-scrollbar {
     width: 10px;
 }

@@ -3,19 +3,36 @@ import editorProps from './editor.props';
 import styles from './editor.module.css';
 
 class Editor extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            text: '.....'
-        };
-        this.handleChange = this.handleChange.bind(this);
-    } 
 
-    handleChange(event) {
+    handleChange = (event) => {
         event.preventDefault();
-        this.setState({
-            text: event.target.value
-        });
+        this.props.onTextInput(event.target.value);
+    }
+
+    highlightText = () => {
+        return this.props.currentText
+    }
+
+    getTextSelection = () => {
+        let text = '';
+        if (window.getSelection) {
+            text = window.getSelection().toString(); 
+        } else if (document.selection && document.selection.type !== "Control") {
+            text = document.selection.createRange().text;
+        }
+        return text;
+    }
+
+    handleSelectedText = (event) => {
+        event.preventDefault();
+        let selection = this.getTextSelection();
+        if (selection) {
+            this.props.onSelection(selection);
+            this.props.handleSelection({
+                color: this.props.highlightColor,
+                value: selection
+            });
+        };
     }
 
     render() {
@@ -24,9 +41,11 @@ class Editor extends Component {
                 <label htmlFor="highlighter_area">Enter some text to highlight and take notes</label>
                 <textarea
                     name="highlighter_area"
-                    className={styles.editor}
+                    className={`${styles.editor} ${styles[this.props.currentColor]}`}
                     onChange={this.handleChange}
-                    value={this.state.text}
+                    placeholder="Enter some text here..."
+                    value={this.highlightText()}
+                    onSelect={this.handleSelectedText}
                 />
             </div>
         );
