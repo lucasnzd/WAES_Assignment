@@ -2,9 +2,9 @@ import { FILTER_BY, SHOW_ALL } from '../actions/actionTypes';
 
 const initialState = {
     options: {
-        first_color: false,
-        second_color: false,
-        third_color: false
+        first_color: true,
+        second_color: true,
+        third_color: true
     }
 };
 

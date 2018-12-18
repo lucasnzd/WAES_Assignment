@@ -1,7 +1,7 @@
 import { HIGHLIGHT_TEXT, ADD_NOTE, ADD_TEXT } from '../actions/actionTypes';
 
 const initialState = {
-    textInput: '.....',
+    textInput: '',
     selections: [],
     notes: []
 };

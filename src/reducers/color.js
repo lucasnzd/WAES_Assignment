@@ -1,7 +1,7 @@
 import { SET_CURRENT_COLOR } from '../actions/actionTypes';
 
 const initialState = {
-    highlight_color: '#606060',
+    highlight_color: '#00E676',
     marker_colors: ['#00E676', '#FFFF00', '#E57373']
 };
 
