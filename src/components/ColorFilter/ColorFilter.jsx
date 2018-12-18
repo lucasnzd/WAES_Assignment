@@ -16,14 +16,18 @@ class ColorFilter extends Component {
     }
 
     render() {
-        // TODO: Remove this colors array and fetch it from the state
-        const colors = ['#00E676', '#FFFF00', '#E57373'];
         return (
             <div>
                 <div className={styles.colorFilter}>
                     <span>Filter by:</span>
                     <ul className={styles.colorMarkers}>
-                        { colors.map(color => <Marker key={color} color={color} className={styles.filterMarker} /> ) }
+                        { this.props.markerColors.map( color =>
+                            <Marker
+                                key={color} 
+                                color={color}
+                                className={styles.filterMarker}
+                            />
+                        )}
                     </ul>
                     <div className={styles.showAllBtn}>
                         <Button text="show all" callback={this.handleShowAll} />
