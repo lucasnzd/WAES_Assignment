@@ -6,20 +6,37 @@ import styles from './display.module.css';
 class Display extends Component {
     constructor(props) {
         super(props);
-        this.mappedNotes = this.mappedNotes.bind(this);
+        this.state = {
+            keys: Object.keys(this.props.options),
+            colors: this.props.markerColors
+        };
     }
 
-    mappedNotes() {
-        if (this.props.notes.length === 0) return;
+    checkConditions = (color) => {
+        const colors = this.state.colors;
+        const options = this.props.options;
+        if (options.first_color && color === colors[0]) return true;
+        if (options.second_color && color === colors[1]) return true;
+        if (options.third_color && color === colors[2]) return true;
+        return false;
+    }
 
-        return this.props.notes.map(
-            (noteText, index) =>
+    checkNotesWithFilters() {
+        return this.props.notes.filter(
+            note => this.checkConditions(note.color)
+        ).map(
+            (note, index) =>
                 <Note
-                    key={`${this.props.color}_${index}`}
-                    text={noteText}
-                    color={this.props.color}
+                    key={`${note.color}_${index}`}
+                    text={note.value}
+                    color={note.color}
                 />
         );
+    }
+
+    mappedNotes = () => {
+        if (this.props.notes.length === 0) return;
+        return this.checkNotesWithFilters();
     }
 
     render() {
