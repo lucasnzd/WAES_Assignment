@@ -1,6 +1,6 @@
 import React, { Component }from 'react';
 import { connect } from 'react-redux';
-import actions from '../../actions';
+import { filterBy, showAll } from '../../actions';
 import Section from '../../components/Section';
 import ColorFilter from '../../components/ColorFilter';
 import Display from '../../components/Display';
@@ -12,8 +12,11 @@ class NotesDisplay extends Component {
                 <ColorFilter
                     markerColors={this.props.colorFilters}
                     options={this.props.options}
+                    onShowAll={this.props.onShowAll}
+                    onFilterClick={this.props.onFilterClick}
                 />
                 <Display
+                    markerColors={this.props.colorFilters}
                     notes={this.props.notes}
                     options={this.props.options}
                 />
@@ -32,8 +35,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFilterClick: options => dispatch(actions.filterBy(options)),
-        onShowAll: () => dispatch(actions.showAll())
+        onFilterClick: options => dispatch(filterBy(options)),
+        onShowAll: () => dispatch(showAll())
     }
 }
 
