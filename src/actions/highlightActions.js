@@ -1,18 +1,18 @@
 import { ADD_NOTE, ADD_TEXT, HIGHLIGHT_TEXT } from './actionTypes';
 
-export const addNote = (note) => {
+const addNote = (note) => {
     return { type: ADD_NOTE, note };
 };
 
-export const addText = (text) => {
+const addText = (text) => {
     return { type: ADD_TEXT, text };
 };
 
-export const highlightText = (selection) => {
+const highlightText = (selection) => {
     return { type: HIGHLIGHT_TEXT, selection };
 };
 
-export default {
+export {
     addNote,
     addText,
     highlightText
