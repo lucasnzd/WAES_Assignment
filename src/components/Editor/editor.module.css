@@ -11,18 +11,15 @@
     resize: none;
 }
 
-.firstColor::selection,
-.firstColor::-moz-selection {
+textarea.firstColor::selection {
     background: #00E676;
 }
 
-.secondColor::selection,
-.secondColor::-moz-selection {
+textarea.secondColor::selection {
     background: #FFFF00;
 }
 
-.thirdColor::selection,
-.thirdColor::-moz-selection {
+textarea.thirdColor::selection {
     background: #E57373;
 }
 
