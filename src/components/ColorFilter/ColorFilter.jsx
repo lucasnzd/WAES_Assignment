@@ -1,37 +1,45 @@
 import React, { Component } from 'react';
 import colorFilterProps from './colorFilter.props';
 import Marker from '../Marker';
-import Button from '../Button';
 import styles from './colorFilter.module.css';
 
 class ColorFilter extends Component {
     constructor(props) {
         super(props);
-        this.handleShowAll = this.handleShowAll.bind(this);
+        this.state = {
+            keys: Object.keys(this.props.options)
+        }
     }
 
-    handleShowAll(event) {
-        // event.preventDefault();
-        console.log('event', event);
+    handleClick = (index) => {
+        const keys = this.state.keys;
+
+        let options = { ...this.props.options };
+        options[keys[index]] = !options[keys[index]];
+
+        this.props.onFilterClick(options);
     }
 
     render() {
+        const options = this.props.options;
+        const keys = this.state.keys;
         return (
             <div>
                 <div className={styles.colorFilter}>
-                    <span>Filter by:</span>
+                    <span>Filter by:</span>`
                     <ul className={styles.colorMarkers}>
-                        { this.props.markerColors.map( color =>
+                        { this.props.markerColors.map( (color, i) =>
                             <Marker
-                                key={color} 
+                                key={color}
+                                id={i}
                                 color={color}
                                 className={styles.filterMarker}
+                                handleClick={this.handleClick}
+                                clickParam="id"
+                                selected={options[keys[i]]}
                             />
                         )}
                     </ul>
-                    <div className={styles.showAllBtn}>
-                        <Button text="show all" callback={this.handleShowAll} />
-                    </div>
                 </div>
             </div>
         );
