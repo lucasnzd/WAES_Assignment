@@ -7,7 +7,6 @@ Assignment for WAES company by Lucas Nuñez
 
 
 ## Scripts:
----
 
 ### `yarn` or `npm i`:
 Install the dependencies
