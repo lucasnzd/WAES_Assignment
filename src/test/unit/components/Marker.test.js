@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Marker from '../../../components/Marker';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Marker />, div);
-  ReactDOM.unmountComponentAtNode(div);
+    const div = document.createElement('div');
+    ReactDOM.render(<Marker />, div);
+    ReactDOM.unmountComponentAtNode(div);
 });

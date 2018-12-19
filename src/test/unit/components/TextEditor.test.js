@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import TextEditor from '../../../components/TextEditor';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<TextEditor />, div);
-  ReactDOM.unmountComponentAtNode(div);
+    const div = document.createElement('div');
+    ReactDOM.render(<TextEditor />, div);
+    ReactDOM.unmountComponentAtNode(div);
 });
