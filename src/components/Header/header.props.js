@@ -1,5 +1,5 @@
 // import PropTypes from 'prop-types';
 
 export default {
-// todo add proptypes
+    // Props not required
 };
