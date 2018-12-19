@@ -9,6 +9,20 @@ body {
     background-color: #fafafa;
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: transparent;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #000;
+  outline: 1px solid #000;
+  border-radius: 10px;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
