@@ -1,5 +1,10 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default {
-// todo add proptypes
+    markerColors: PropTypes.arrayOf(PropTypes.string).isRequired,
+    notes: PropTypes.arrayOf(PropTypes.shape({
+        color: PropTypes.string.isRequired,
+        value: PropTypes.string.isRequired
+      })).isRequired,
+    options: PropTypes.object.isRequired
 };

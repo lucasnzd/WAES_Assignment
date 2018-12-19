@@ -4,24 +4,17 @@ import Note from '../Note';
 import styles from './display.module.css';
 
 class Display extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            keys: Object.keys(this.props.options),
-            colors: this.props.markerColors
-        };
-    }
 
-    checkConditions = (color) => {
-        const colors = this.state.colors;
+    checkConditions = color => {
+        const colors = this.props.markerColors;
         const options = this.props.options;
-        if (options.first_color && color === colors[0]) return true;
+        if (options.first_color  && color === colors[0]) return true;
         if (options.second_color && color === colors[1]) return true;
-        if (options.third_color && color === colors[2]) return true;
+        if (options.third_color  && color === colors[2]) return true;
         return false;
     }
 
-    checkNotesWithFilters() {
+    checkNotesWithFilters = () => {
         return this.props.notes.filter(
             note => this.checkConditions(note.color)
         ).map(
@@ -35,11 +28,12 @@ class Display extends Component {
     }
 
     mappedNotes = () => {
-        if (this.props.notes.length === 0) return;
-        return this.checkNotesWithFilters();
+        return !!this.props.notes.length !== 0
+            ? this.checkNotesWithFilters()
+            : null ;
     }
 
-    render() {
+    render = () => {
         return (
             <div className={styles.display}>
                 { this.mappedNotes() }
