@@ -3,7 +3,7 @@ import logoProps from './logo.props';
 import styles from './logo.module.css';
 
 class Logo extends Component {
-    render() {
+    render = () => {
         return (
             <div className={styles.logoContainer}>
                 <img src={this.props.src} alt={this.props.alt} />
