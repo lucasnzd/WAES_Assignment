@@ -10,7 +10,6 @@ class MarkersBar extends Component {
         this.state = {
             toggle: true
         };
-        this.generateMarkers = this.generateMarkers.bind(this);
     }
 
     handleToggle = () => {
@@ -24,19 +23,21 @@ class MarkersBar extends Component {
     }
 
     generateMarkers = () => {
-        if (this.props.markersColors.length === 0) return;
-        const markersColors = this.props.markersColors;
-        return markersColors.map((color, i) => <Marker
+        const markers = this.props.markersColors;
+        if (markers.length === 0) return;
+
+        return markers.map((color, i) =>
+            <Marker
                 key={`${color}_${i}`}
                 color={color}
                 handleClick={this.handleOnClick}
                 clickParam="color"
-                selected={false}
+                selected={this.props.highlightColor === color}
             />
         );
     }
 
-    render() {
+    render = () => {
         const toggle = this.state.toggle;
         return (
             <nav className={styles.navbar}>
@@ -44,7 +45,7 @@ class MarkersBar extends Component {
                     <ul className={styles.markers}>
                         { this.generateMarkers() }
                     </ul>
-                    {/* REFACTOR THIS FOR ANOTHER MARKER BAR BTN COMPONENT */}
+                    {/* TODO: REFACTOR THIS FOR ANOTHER MARKER BAR BTN COMPONENT */}
                     <div className={styles.navButton}>
                         <Button
                             text={toggle ? 'hide' : 'show'}
