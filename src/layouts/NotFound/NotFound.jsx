@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './notFound.module.css';
 
 class NotFound extends Component {
-    render() {
+    render = () => {
         return (
             <main>
                 <Header />

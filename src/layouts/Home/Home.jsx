@@ -4,7 +4,7 @@ import NotesDisplay from '../../containers/NotesDisplay';
 import Header from '../../components/Header';
 
 class Home extends Component {
-    render() {
+    render = () => {
         return (
             <main>
                 <Header />
