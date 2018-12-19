@@ -1,14 +1,14 @@
 import { ADD_NOTE, ADD_TEXT, HIGHLIGHT_TEXT } from './actionTypes';
 
-const addNote = (note) => {
+const addNote = note => {
     return { type: ADD_NOTE, note };
 };
 
-const addText = (text) => {
+const addText = text => {
     return { type: ADD_TEXT, text };
 };
 
-const highlightText = (selection) => {
+const highlightText = selection => {
     return { type: HIGHLIGHT_TEXT, selection };
 };
 

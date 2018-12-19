@@ -1,6 +1,6 @@
 import { FILTER_BY, SHOW_ALL } from './actionTypes';
 
-const filterBy = (options) => {
+const filterBy = options => {
     return { type: FILTER_BY, options };
 };
 
