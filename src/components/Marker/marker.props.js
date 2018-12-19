@@ -1,5 +1,8 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default {
-// todo add proptypes
+    clickParam: PropTypes.string,
+    color: PropTypes.string.isRequired,
+    handleClick: PropTypes.func.isRequired,
+    selected: PropTypes.bool
 };
