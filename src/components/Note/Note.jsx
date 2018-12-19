@@ -3,7 +3,7 @@ import noteProps from './note.props';
 import styles from './note.module.css';
 
 class Note extends Component {
-    render() {
+    render = () => {
         return (
             <span
                 className={styles.note}

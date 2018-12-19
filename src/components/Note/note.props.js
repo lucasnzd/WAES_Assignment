@@ -1,5 +1,6 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default {
-// todo add proptypes
+    color: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
 };
