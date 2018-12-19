@@ -4,7 +4,7 @@ import SectionLabel from '../SectionLabel';
 import styles from './section.module.css';
 
 class Section extends Component {
-    render() {
+    render = () => {
         const title = this.props.title;
         return (
             <section className={styles.sectionCard}>

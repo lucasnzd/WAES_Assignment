@@ -1,5 +1,6 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 export default {
-// todo add proptypes
+    title: PropTypes.string,
+    children: PropTypes.children 
 };
