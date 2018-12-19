@@ -6,7 +6,7 @@ import ColorFilter from '../../components/ColorFilter';
 import Display from '../../components/Display';
 
 class NotesDisplay extends Component {
-    render() {
+    render = () => {
         return (
             <Section title="my notes">
                 <ColorFilter

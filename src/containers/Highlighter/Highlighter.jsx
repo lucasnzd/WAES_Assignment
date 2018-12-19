@@ -9,7 +9,7 @@ import Section from '../../components/Section';
 import TextEditor from '../../components/TextEditor';
 
 class Highlighter extends Component {
-    render() {
+    render = () => {
         return (
             <Section title="highlighter">
                 <TextEditor
