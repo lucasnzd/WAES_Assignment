@@ -3,7 +3,7 @@ import sectionLabelProps from './sectionLabel.props';
 import styles from './sectionLabel.module.css';
 
 class SectionLabel extends Component {
-    render() {
+    render = () => {
         return (
             <h2 className={styles.sectionLabel}>
                 { this.props.text }
