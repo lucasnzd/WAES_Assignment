@@ -14,12 +14,13 @@ class TextEditor extends Component {
         if (options[2] === highlightColor) return 'thirdColor';
     }
 
-    render() {
+    render = () => {
         return (
             <div className={styles.editorContainer}>
                 <MarkersBar
                     markersColors={this.props.markersColors}
                     onColorChange={this.props.onColorChange}
+                    highlightColor={this.props.highlightColor}
                 />
                 <Editor
                     currentColor={this.getCurrentColor()}
