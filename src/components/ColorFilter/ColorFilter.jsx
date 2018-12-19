@@ -20,27 +20,27 @@ class ColorFilter extends Component {
         this.props.onFilterClick(options);
     }
 
-    render() {
+    render = () => {
         const options = this.props.options;
         const keys = this.state.keys;
         return (
-            <div>
-                <div className={styles.colorFilter}>
-                    <span>Filter by:</span>`
-                    <ul className={styles.colorMarkers}>
-                        { this.props.markerColors.map( (color, i) =>
-                            <Marker
-                                key={color}
-                                id={i}
-                                color={color}
-                                className={styles.filterMarker}
-                                handleClick={this.handleClick}
-                                clickParam="id"
-                                selected={options[keys[i]]}
-                            />
-                        )}
-                    </ul>
-                </div>
+            <div className={styles.colorFilter}>
+
+                <span>Filter by:</span>
+
+                <ul className={styles.colorMarkers}>
+                    { this.props.markerColors.map( (color, i) =>
+                        <Marker
+                            key={color}
+                            id={i}
+                            color={color}
+                            className={styles.filterMarker}
+                            handleClick={this.handleClick}
+                            clickParam="id"
+                            selected={options[keys[i]]}
+                        />
+                    )}
+                </ul>
             </div>
         );
     }
