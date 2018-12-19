@@ -6,7 +6,7 @@ import Routes from './routes';
 const store = createStore(reducers);
 
 class App extends Component {
-    render() {
+    render = () => {
         return (
             <Provider store={store}>
                 <Routes />
